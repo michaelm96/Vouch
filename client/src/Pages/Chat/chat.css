@@ -1,0 +1,116 @@
+.chat {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exitLink {
+    text-decoration: none;
+    color: #5db075;
+    font-weight: bolder;
+}
+
+.top {
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listChat {
+    width: 40vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.listChat::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+.otherBox {
+    width: 20vw;
+    /* margin: 0px 0px 1rem; */
+    background: #f6f6f6;
+    padding: .8rem;
+    text-align: center;
+    font-family: arial;
+    position: relative;
+    border-radius: 10px 10px 10px 0px;
+}
+
+.other:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 10px solid transparent;
+    border-left: 10px solid #f6f6f6;
+    border-top: 10px solid #f6f6f6;
+    border-bottom: 10px solid transparent;
+    left: 0px;
+    bottom: -1rem;
+}
+
+.box {
+    width: 20vw;
+    /* margin: 0px 45% 1rem; */
+    background: #5db075;
+    padding: .8rem;
+    text-align: center;
+    color: #fff;
+    font-family: arial;
+    position: relative;
+    border-radius: 10px 10px 0px 10px;
+}
+
+.mine:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #5db075;
+    border-top: 10px solid #5db075;
+    border-bottom: 10px solid transparent;
+    right: 0px;
+    bottom: -1rem;
+}
+
+.formClass {
+    box-sizing: border-box;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.inputMsg {
+    width: 40vw;
+    height: 5vh;
+    border-radius: 30px;
+    border: .1px solid rgba(0, 0, 0, .1);
+    padding: .5rem 3rem .5rem 1rem;
+    background-color: #f6f6f6;
+}
+
+.circle {
+    float: right;
+    margin-right: .4rem;
+    margin-top: -2.6rem;
+    position: relative;
+    z-index: 2;
+    min-height: 1vh;
+    min-width: 3vw;
+    font-size: 2.4rem;
+    color: #5db075;
+}
