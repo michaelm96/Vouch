@@ -11,7 +11,7 @@ function Chat(props) {
   const [roomId, setRoomId] = useState(props.location.state.roomId);
   const socketRef = useRef();
   const messagesEndRef = useRef(null);
-  const url = "http://localhost:5000";
+  const url = process.env.REACT_APP_API_URL
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -28,6 +28,7 @@ function Chat(props) {
     setMessage("");
   };
 
+  // Retrieve messages for current room
   useEffect(() => {
     (async function () {
       try {
@@ -39,6 +40,7 @@ function Chat(props) {
     })();
   }, []);
 
+  // Listening emit from server
   useEffect(() => {
     socketRef.current.on(roomId, (msg) => {
       setDataList((dataList) => [...dataList, msg]);

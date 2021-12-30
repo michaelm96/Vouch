@@ -7,7 +7,7 @@ function Home() {
   const [Username, setUsername] = useState("");
   const [RoomId, setRoomId] = useState("");
   let history = useHistory();
-  const url = "http://localhost:5000"
+  const url = process.env.REACT_APP_API_URL
 
   const submit = async () => {
     try {
@@ -19,13 +19,13 @@ function Home() {
       if (result.status === 200) {
         sessionStorage.setItem("loginStatus", "loggedIn");
 
+        // Move to path /chat
         history.push({
           pathname: "/chat",
           state: { roomId: RoomId, userId: result.data.result.userId },
         });
       }
     } catch (error) {
-      console.log(error.response);
       alert(error.response.data.message);
     }
   };
